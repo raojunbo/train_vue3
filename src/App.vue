@@ -1,40 +1,40 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import KLineTrendView from './views/KLineTrendView.vue'
-import KLineOXView from './views/KLineOXView.vue'
-</script>
-
 <template>
-  <nav>
-    <!-- <RouterLink to="/">Home</RouterLink> -->
-    <!-- <RouterLink to="/about">About</RouterLink> -->
-    <RouterLink to="/trend">趋势图</RouterLink>
-    <RouterLink to="/OX">点数图</RouterLink>
-    <RouterLink to="/train">训练图</RouterLink>
-  </nav>
-  <RouterView />
+  <div class="common-layout">
+    <el-container>
+      <el-aside width="100px" class="aside">
+        <div ></div>
+        <img class="logo" alt="Vue logo" src="./assets/logo.png">
+        <RouterLink class="routerlink" to="/trend" >趋势图</RouterLink>
+        <RouterLink class="routerlink" to="/OX">点数图</RouterLink>
+        <RouterLink class="routerlink" to="/train">训练图</RouterLink>
+      </el-aside>
+      <el-container>
+        <el-header>Headers</el-header>
+        <el-main>
+          <RouterView />
+        </el-main>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <style scoped>
-
-
-nav {
-  width: 100px;
+.aside {
+  display: flex;
+  flex-direction: column;
 }
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
+.header {
+  height: 75px;
 }
-
-@media (min-width: 1024px) {
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.logo {
+  width: 75px;
+  height: 75px;
+}
+.routerlink {
+  height: 50px;
+  text-align: center;
+}
+.main {
+  padding: 0;
 }
 </style>
