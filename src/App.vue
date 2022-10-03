@@ -1,17 +1,19 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-aside width="100px" class="aside">
-        <div ></div>
-        <img class="logo" alt="Vue logo" src="./assets/logo.png">
-        <RouterLink class="routerlink" to="/trend" >趋势图</RouterLink>
-        <RouterLink class="routerlink" to="/OX">点数图</RouterLink>
-        <RouterLink class="routerlink" to="/train">训练图</RouterLink>
+      <el-aside width="50px" class="aside">
+          <RouterLink class="routerlink" to="/trend" >趋势图</RouterLink>
+          <RouterLink class="routerlink" to="/train">训练图</RouterLink>
+          <RouterLink class="routerlink" to="/OX">点数图</RouterLink>
       </el-aside>
       <el-container>
-        <el-header>Headers</el-header>
-        <el-main>
-          <RouterView />
+        <!-- <el-header class="header"> -->
+        <!-- </el-header> -->
+        <el-main class="main">
+          <div>
+            <RouterView />
+          </div>
+         
         </el-main>
       </el-container>
     </el-container>
@@ -22,9 +24,11 @@
 .aside {
   display: flex;
   flex-direction: column;
+  background-color: #409eff;
 }
 .header {
-  height: 75px;
+  height: 50px;
+  background-color: #409eff;
 }
 .logo {
   width: 75px;
